@@ -1,10 +1,13 @@
 import { WebSocketServer } from "ws";
 import http from "http"
 
-const server = http.createServer();
+const server = http.createServer((req,res)=>{
+    res.writeHead(200)
+    res.end("servidor normal")
+});
 
 const wss = new WebSocketServer({
-    server
+    server:server
 })
 
 const connections = new Map();
