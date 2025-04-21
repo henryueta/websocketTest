@@ -68,6 +68,8 @@ wss.on('connection',(ws,req)=>{
 
 })
 
-server.listen(3200,()=>{
-    console.log("success")
+const port = process.env.PORT || 3000
+
+server.listen(port,'0.0.0.0',()=>{
+    console.log(port)
 })
